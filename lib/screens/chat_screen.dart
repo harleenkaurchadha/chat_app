@@ -28,8 +28,11 @@ class ChatScreen extends StatelessWidget{
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
-                                               //emits new values whenever data changes to give it real time aspect
-
+              Firestore.instance
+              .collection('chats/A6pkO1VU0FJNhc8YpM40/messages')
+              .add({
+                'text': 'This was added by clicking the button'
+              });
             }),
       );
   }
