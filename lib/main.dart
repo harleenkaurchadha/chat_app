@@ -1,6 +1,7 @@
 import './screens/auth_screen.dart';
 import './screens/chat_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +25,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
          ),
-      home: AuthScreen(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.onAuthStateChanged,             //stream will emit a value whenever auth state changes
+        builder: (ctx, userSnapshot) {
+         if(userSnapshot.hasData) {                                   //we did find a token
+           return ChatScreen();
+         }
+          return AuthScreen();
+         }),
     );
   }
 }
