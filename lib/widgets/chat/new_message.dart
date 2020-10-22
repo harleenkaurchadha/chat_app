@@ -14,10 +14,12 @@ class _NewMessageState extends State<NewMessage> {
   void _sendMessage() async{
     FocusScope.of(context).unfocus();                                         //to close the opened keyboard
     final user = await FirebaseAuth.instance.currentUser();                   //give access to currently logged in user with user id
+    final userData = await Firestore.instance.collection('users').document(user.uid).get();
     Firestore.instance.collection('chat').add({
       'text' : _enteredMessage,
       'createdAt' : Timestamp.now(),                                          //inorder to get perfect ordering of message
       'userId' : user.uid,
+      'username' : userData['username'],
     });
     _controller.clear();
   }
