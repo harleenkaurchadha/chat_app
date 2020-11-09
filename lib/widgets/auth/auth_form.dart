@@ -1,3 +1,5 @@
+import 'dart:io';
+import '../pickers/user_image_picker.dart';
 import 'package:flutter/material.dart';
 
 class AuthForm extends StatefulWidget{
@@ -12,6 +14,7 @@ class AuthForm extends StatefulWidget{
       String email,
       String password,
       String username,
+      File image,
       bool isLogin,
       BuildContext ctx,
       ) submitFn;
@@ -26,10 +29,24 @@ class _AuthFormState extends State<AuthForm> {
   var _userEmail = '';
   var _userName = '';
   var _userPassword = '';
+  var _userImageFile;
+
+  void _pickedImage(File image){
+     _userImageFile = image;
+  }
 
   void _trySubmit(){                                                    //to validate the form
     final isValid = _formKey.currentState.validate();                   //triggers all the validators of textFormField in the form
     FocusScope.of(context).unfocus();                                   //to close the keyboard as soon as we submit the form
+
+    if(_userImageFile == null && !_isLogin){
+      Scaffold.of(context).showSnackBar(
+          SnackBar(
+              content: Text('Please pick an image'),
+              backgroundColor: Theme.of(context).errorColor,
+          ));
+      return;
+    }
 
     if(isValid){
       _formKey.currentState.save();                                     //triggers onSaved field of every textFormField
@@ -37,6 +54,7 @@ class _AuthFormState extends State<AuthForm> {
         _userEmail.trim(),                                              //removes the excess white space
         _userPassword.trim(),
         _userName.trim(),
+        _userImageFile,
         _isLogin,
         context,
       );
@@ -56,6 +74,7 @@ class _AuthFormState extends State<AuthForm> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,                       //so that column takes as much height as needed
                 children: [
+                  if(!_isLogin) UserImagePicker(_pickedImage),
                  TextFormField(
                    key: ValueKey('email'),               //unique id for a textField so that when a field is removed value does not move to other
                    validator: (value){
