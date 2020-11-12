@@ -46,9 +46,12 @@ class _AuthScreenState extends State<AuthScreen> {
          
          await ref.putFile(image).onComplete;                        //put file to the ref path & onComplete makes it a future event
 
+         final url = await ref.getDownloadURL();  //to get a url for uploaded file so that we can use in future & no need to scan firebase every time
+
          await Firestore.instance.collection('users').document(authResult.user.uid).setData({        //setData to store extra data for that document
            'username' : username,
            'email' : email,
+           'image_url' : url,
          });
        }
      } on PlatformException catch(err){                                  //error on firebase relating to invalid credentials
