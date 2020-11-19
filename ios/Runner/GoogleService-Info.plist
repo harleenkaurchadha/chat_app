@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>803110504460-9dg6rd3t35mmai080e3ntsr74slrnf0m.apps.googleusercontent.com</string>
+	<string>803110504460-7cai5s93j5pu99k3mtbl1gst1cfn6hth.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.803110504460-9dg6rd3t35mmai080e3ntsr74slrnf0m</string>
+	<string>com.googleusercontent.apps.803110504460-7cai5s93j5pu99k3mtbl1gst1cfn6hth</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDQOD1QZfFfWGenfVuIGRPYPRR1fVhSiUs</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.chatapp</string>
+	<string>com.example.chatingapp</string>
 	<key>PROJECT_ID</key>
 	<string>flutter-chat-ce3e2</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:803110504460:ios:2cece609b6ab0214974629</string>
+	<string>1:803110504460:ios:bec35677b77825d3974629</string>
 	<key>DATABASE_URL</key>
 	<string>https://flutter-chat-ce3e2.firebaseio.com</string>
 </dict>

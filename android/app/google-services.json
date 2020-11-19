@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:803110504460:android:da01fca658f5ecae974629",
+        "mobilesdk_app_id": "1:803110504460:android:5b85e775feaa0e01974629",
         "android_client_info": {
-          "package_name": "com.example.chat_app"
+          "package_name": "com.example.chatingapp"
         }
       },
       "oauth_client": [
@@ -30,6 +30,13 @@
             {
               "client_id": "803110504460-5e5crn4ac9748fnha55lm06aqo0psmv2.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "803110504460-9dg6rd3t35mmai080e3ntsr74slrnf0m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chatapp"
+              }
             }
           ]
         }

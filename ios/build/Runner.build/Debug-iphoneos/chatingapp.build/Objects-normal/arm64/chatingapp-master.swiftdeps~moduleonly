@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+options: "d2ca113fc456782a55de533222214a0b"
+build_time: [1605639131, 871101000]
+inputs:
+  "/Users/anmol/apps/chat_app_tutorial/ios/chatingapp/ContentView.swift": [1605639006, 945884948]
+  "/Users/anmol/apps/chat_app_tutorial/ios/chatingapp/chatingappApp.swift": [1605639006, 938840553]
