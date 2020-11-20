@@ -15,6 +15,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     final fbm = FirebaseMessaging();
+    fbm.requestNotificationPermissions();
     fbm.configure(onMessage: (msg){
       print(msg);
       return;
@@ -34,6 +35,7 @@ class _ChatScreenState extends State<ChatScreen> {
            title: Text('Flutter Chat'),
           actions: [
             DropdownButton(
+              underline: Container(),                                       //so that grey line does not appear
               icon: Icon(Icons.more_vert),
               dropdownColor: Theme.of(context).primaryIconTheme.color,
               items: [

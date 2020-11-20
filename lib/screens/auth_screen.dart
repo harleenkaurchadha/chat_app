@@ -23,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
       bool isLogin,
       BuildContext ctx,
       ) async{
-     AuthResult authResult;
+     UserCredential authResult;
 
      try {
        setState(() {
@@ -44,11 +44,11 @@ class _AuthScreenState extends State<AuthScreen> {
              .child('user_image')
              .child(authResult.user.uid + '.jpg');                      //create file with this name in user_image folder
          
-         await ref.putFile(image).onComplete;                        //put file to the ref path & onComplete makes it a future event
+         await ref.putFile(image);                        //put file to the ref path & onComplete makes it a future event
 
          final url = await ref.getDownloadURL();  //to get a url for uploaded file so that we can use in future & no need to scan firebase every time
 
-         await Firestore.instance.collection('users').document(authResult.user.uid).setData({        //setData to store extra data for that document
+         await FirebaseFirestore.instance.collection('users').doc(authResult.user.uid).set({        //setData to store extra data for that document
            'username' : username,
            'email' : email,
            'image_url' : url,
