@@ -20,7 +20,7 @@ class _NewMessageState extends State<NewMessage> {
       'createdAt' : Timestamp.now(),                                          //inorder to get perfect ordering of message
       'userId' : user.uid,
       'username' : userData['username'],
-      'userImage' : userData['image_url  '],
+      'userImage' : userData['image_url'],
     });
     _controller.clear();
   }
