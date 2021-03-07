@@ -12,7 +12,8 @@ In this we are going to create a chat app with chat functionality by using fireb
 ### step 1:
 
 Download or clone this repo by using the following link:
-[git@github.com:harleenkaurchadha/chat_app.git](git@github.com:harleenkaurchadha/chat_app.git)
+
+[<u>git@github.com:harleenkaurchadha/chat_app.git</u>](https://git@github.com:harleenkaurchadha/chat_app.git)
 
 ### step 2:
 
